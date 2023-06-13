@@ -1,9 +1,42 @@
-extends /templates/base.pug 
+mixin post(date)
+    article.post(id=date)
+        h4 -----BEGIN OSS ENCRYPTED TRANSMISSION-----
+        h5 TRANSMISSION DATE: #{date}
+        block
+        h4 -----END OSS ENCRYPTED TRANSMISSION-----
 
-block content
-    // Pug doesn't support dymanic includes :((
-    // Guess I'll render it a bit manually 
 
-    h1 Lunaf0x's Dataspherespace! 
-    
-    
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        block title
+            title LUNAFOX!!
+        link(rel="stylesheet", href="/src/lunafox.scss")
+    body
+        header 
+            nav 
+                each val in ["10-06-XXXXX", "13-04-XXXXX"]
+                    button(value=val) 10-06-XXXXX
+                 
+
+            section#music
+                button#play meow
+
+            h1#title LUNAFOX!!
+            
+        //('s secret blog!)
+        main
+            +post("10-06-XXXXX")
+                include:markdown-it posts/10-06-XXXXX.md 
+
+
+            +post("13-04-XXXXX")
+                include:markdown-it posts/13-04-XXXXX.md 
+
+        block music
+            script.
+                let song="Limbo - Late Night Illuminati Talks"
+        script(src="index.js")
+        script(src="music.js" type="module") 

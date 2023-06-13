@@ -3,6 +3,7 @@ $primary: #6C1E99;
 $secondary: #1D0042;
 $tertiary: #C589E8;
 $quaternary: #120B02;
+//#750979
 
 $color: white;
 
@@ -34,34 +35,34 @@ a {
 body {
     background-color: $background;
     background-image: url("../assets/background.gif");
-    > * {
-        width: 80%;
-        box-sizing: border-box;
+}
 
-        margin: auto;
-        margin-bottom: 20px;
-        padding: 20px calc(20px + 15px);
-        
-        color: $color;
-        background-color: $primary;
+header, main {
+    
+    width: 80%;
+    margin: auto;
+}
 
-        outline-style: groove;
-        outline-width: 4px;
-        outline-color: $background;
-        outline-offset: -15px;
+header, article {
+    box-sizing: border-box;
+
+    margin-bottom: 20px;
+    padding: 20px calc(20px + 15px);
     
-    
-    }
+    color: $color;
+    background-color: $primary;
+
+    outline-style: groove;
+    outline-width: 4px;
+    outline-color: $background;
+    outline-offset: -15px;
 }
 
 nav {
-    ul {
-        display: flex;
-        justify-content: space-around;
-        list-style-type: none;
-        text-align: center;
-        flex-wrap: wrap;
-
-    }
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
+
+.post {display: none;}
 
