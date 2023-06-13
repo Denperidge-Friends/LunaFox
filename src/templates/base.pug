@@ -3,15 +3,24 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title LUNAFOX!!('s secret blog!)
+        block title
+            title LUNAFOX!!
         link(rel="stylesheet", href="/src/lunafox.scss")
     body
         header 
             nav 
                 ul
-                    li
-                        a(href="/") H0m3!
+                    a(href="/")
+                        li H0m3!
+                        
                     :posts
 
         main
+            button#play meow
             block content
+
+
+        block music
+            script.
+                let song="Limbo - Late Night Illuminati Talks"
+        script(src="/src/music.js" type="module") 

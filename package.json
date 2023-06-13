@@ -8,6 +8,13 @@
     "@parcel/transformer-raw": "^2.8.3",
     "@parcel/transformer-sass": "^2.8.3",
     "jstransformer-markdown-it": "^3.0.0",
-    "parcel": "^2.8.3"
+    "parcel": "^2.8.3",
+    "parcel-reporter-static-files-copy": "^1.5.0"
+  },
+  "dependencies": {
+    "howler": "^2.2.3"
+  },
+  "staticFiles": {
+    "staticPath": "assets"
   }
 }

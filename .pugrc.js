@@ -7,7 +7,7 @@ function linkToPost(filename) {
     let href = filename.replace("src/", "");
     let name = filename.replace(".pug", "");
 
-    return `<li><a href="/src/posts/${href}">${name}</a></li>`;
+    return `<a href="/src/posts/${href}"><li>${name}</li></a>`;
 }
 
 module.exports = {
