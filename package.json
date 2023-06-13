@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "npx parcel serve src/index.pug",
+    "build": "npx parcel build src/index.pug"
+  },
+  "devDependencies": {
+    "@parcel/transformer-pug": "^2.8.3",
+    "@parcel/transformer-raw": "^2.8.3",
+    "@parcel/transformer-sass": "^2.8.3",
+    "jstransformer-markdown-it": "^3.0.0",
+    "parcel": "^2.8.3"
+  }
+}
