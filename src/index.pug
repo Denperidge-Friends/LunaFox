@@ -11,18 +11,21 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        block title
-            title LUNAFOX!!
+        title LUNAFOX!!
         link(rel="stylesheet", href="/src/lunafox.scss")
     body
         header 
             nav 
                 each val in ["10-06-XXXXX", "13-04-XXXXX"]
-                    button(value=val) 10-06-XXXXX
+                    button(value=val) #{val}
                  
 
             section#music
-                button#play meow
+                button#prev &lt;
+                
+                button#play play
+                input#volume(type="range" value=10)
+                button#next &gt;
 
             h1#title LUNAFOX!!
             

@@ -12,9 +12,7 @@ module.exports = {
                 if (filename.endsWith("mp3")) {
                     songs.push(filename)
                 }
-            })
-            console.log(songs)
-            console.log(JSON.stringify(songs))
+            });
 
             return "let songs = " + JSON.stringify(songs) + ";";
         }
