@@ -7,9 +7,26 @@ $quaternary: #120B02;
 
 $color: white;
 
+@font-face {
+    font-family: "League Spartan";
+    src: url("../fonts/LeagueSpartan/LeagueSpartan-Regular.woff2")format("woff2");
+}
+
+@font-face {
+    font-family: "Anthony";
+    src: url("../fonts/Anthony/Anthony.woff2")format("woff2");
+}
+
+
 html, body {
     margin: 0;
     padding: 0;
+    font-family: 'League Spartan', 'Courier New', Courier, monospace;
+    font-size: larger;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Anthony', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
