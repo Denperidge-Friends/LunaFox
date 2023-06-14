@@ -18,18 +18,18 @@ html(lang="en")
             nav 
                 each val in ["10-06-XXXXX", "13-04-XXXXX"]
                     button(value=val) #{val}
-                 
+            hr
 
             section#music
                 button#prev &lt;
                 
                 button#play play
-                input#volume(type="range" value=10)
+                .range 
+                    input#volume(type="range" value=10)
                 button#next &gt;
 
             h1#title LUNAFOX!!
             
-        //('s secret blog!)
         main
             +post("10-06-XXXXX")
                 include:markdown-it posts/10-06-XXXXX.md 
