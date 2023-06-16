@@ -1,3 +1,14 @@
+@keyframes fadein {
+    from {
+        color: $primary;
+        background-color: $primary;
+    }
+    to {
+        color: $color;
+        background-color: $secondary;
+    }
+}
+
 #messageSelect {
     margin-top: 25px;
     
@@ -10,6 +21,22 @@
         overflow: hidden;
         white-space: pre;
         text-align: center;
+
+        color: $primary;
+        background-color: $primary;
+
+        animation-name: fadein;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-timing-function: steps(40, jump-both);
+        animation-delay: 5s;  // Default, in case of other messages being added
+
+        &:nth-of-type(1) {
+            animation-delay: 2s;
+        }
+        &:nth-of-type(2) {
+            animation-delay: 3.5s;
+        }
     }
 }
 
