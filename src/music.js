@@ -3,6 +3,9 @@ import $ from "jquery";
 
 const play = $("#play");
 const volume = $("#volume");
+const nowPlaying = $("#nowPlaying");
+const songName = $("#songName");
+
 
 let sound;
 
@@ -19,11 +22,18 @@ function playSong() {
     if (songIndex >= songs.length) {
         songIndex = 0;
     } else if (songIndex < 0) {
-        songIndex = songIndex.length - 1;
+        songIndex = songs.length - 1;
     }
 
+    let file = songs[songIndex];
+    let artist = file.substring(0, file.indexOf("-") - 1)
+    let track = file.substring(file.indexOf("-") + 1, file.lastIndexOf("."))
+
+    songName.text(`${track} by ${artist}`);
+    nowPlaying.attr("title", file);
+
     return new Howl({
-        src: songs[songIndex],
+        src: file,
         autoplay: true,
         volume: volume.val() / 100,
         onplay: () => {
