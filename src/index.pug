@@ -29,21 +29,24 @@ html(lang="en")
             p.
                 Welcome!
         
+
+        - let messages = ["05-Octo-793PT", "22-Sena-793PT"]
+
         main
             h2.typewriter.auto Loading incoming messages...
 
             section#messages
-                each val, i in ["10-06-XXXXX", "13-04-XXXXX"]
+                each val, i in messages
                     -let delay = "animate__animated animate__fadeInDown animate__delay-" + (i + 2) + "s"
                     button(value=val, class=delay) #{val}
 
         
-        +message("10-06-XXXXX")
-            include:markdown-it posts/10-06-XXXXX.md 
+        +message(messages[0])
+            include:markdown-it posts/05-Octo-793PT-10-06-2023.md 
 
 
-        +message("13-04-XXXXX")
-            include:markdown-it posts/13-04-XXXXX.md 
+        +message(messages[1])
+            include:markdown-it posts/22-Sena-793PT-XX-XX-2023.md 
 
         
         script
