@@ -15,7 +15,7 @@ html(lang="en")
         link(rel="stylesheet", href="/src/lunafox.scss")
     body
         header 
-            section#music
+            section#music(data-songs=songs)
                 button#prev &lt;
                 
                 button#play play
@@ -53,11 +53,6 @@ html(lang="en")
 
         +message(messages[1])
             include:markdown-it posts/22-Sena-793PT-XX-XX-2023.md 
-
-        
-        script
-            :songs
-        
             
         script(src="messages.js" type="module")
         script(src="music.js" type="module") 

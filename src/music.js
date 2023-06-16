@@ -6,7 +6,7 @@ const volume = $("#volume");
 const nowPlaying = $("#nowPlaying");
 const songName = $("#songName");
 
-
+let songs = JSON.parse($("#music").attr("data-songs"));
 let sound;
 
 function random(min, max) {
