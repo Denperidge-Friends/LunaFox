@@ -5,14 +5,13 @@ let buttons = $("#messages button");
 const originalTitle = document.title;
 
 function showMessage(id) {
+    document.title = document.title + " | " + id;
+
     $(".message").css("display", "none");
 
     $("#" + id).css("display", "block").animate({
         opacity: 1
     }, 2000);
-
-
-
 
     const info = $("#" + id + " .info")
     info.addClass("typewriter");
@@ -48,19 +47,17 @@ function messageContentAnimation(contents) {
     });
 }
 
-buttons.each((i, button) => {
-    $(button).on("click", (e) => {
-        let button = $(e.target);
-        
-        button.animate({"width": 0}, 2000);
+buttons.on("click", (e) => {
+    document.title = originalTitle + "'s SECRET BLOG!";
+    let button = $(e.target);
+    
+    button.animate({"width": 0}, 2000);
 
-        setTimeout(()=> {
-            button.remove();
-        }, 1500);
+    setTimeout(()=> {
+        button.remove();
+    }, 1500);
 
-        setTimeout(()=> {
-            showMessage(e.target.value);
-        }, 1000);
-
-    });
+    setTimeout(()=> {
+        showMessage(e.target.value);
+    }, 1000);
 });
