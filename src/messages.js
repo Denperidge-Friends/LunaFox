@@ -13,8 +13,6 @@ function delayedValue(elem, attribute, value, delay=100) {
 function showMessage(id) {
     $(".message").css("display", "none");
 
-    //$(`#${id} *`).addClass("typewriter")
-
     $("#" + id).css("display", "block").animate({
         opacity: 1
     }, 2000);
@@ -22,27 +20,33 @@ function showMessage(id) {
 
 
 
+    const info = $("#" + id + " .info")
+    info.addClass("typewriter");
+
     let contents = $("#" + id + " *");
-    contents.addClass("typewriter")
     
-    iterateContentTypewriter(contents.toArray());
+    messageContentAnimation(contents.toArray());
 }
 
-function iterateContentTypewriter(contents) {
+function messageContentAnimation(contents) {
     let content = contents.shift();
     if(!content) return;
-    let duration = 4000;
 
-    $(content).animate({
-        width: "100%"
+    content = $(content);
+
+    console.log(content)
+
+    let attribute, value, duration;
+    [ attribute, value ] = content.hasClass("info") ? [ "width", "100%", 3200 ] : [ "opacity", 1, 2000 ];
+    console.log(attribute, value, duration)
+
+    duration = Array.from(content.text()).length * 100;
+
+    content.animate({
+        [attribute]: value
     }, duration, () => {
-        iterateContentTypewriter(contents)
+        messageContentAnimation(contents)
     });
-
-
-    setTimeout(() => {
-    }, duration);
-
 }
 
 buttons.each((i, button) => {

@@ -142,10 +142,11 @@ body > * {
             transform: translateX(0%);
             // Thanks to https://blog.hubspot.com/website/scrolling-text-css
             animation-name: scrolling;
-            animation-duration: 15s;
+            animation-duration: 5s;
             animation-iteration-count: infinite;
             animation-direction: alternate;
-            animation-timing-function: linear;
+            animation-timing-function: steps(40, jump-both);
+
         }
     }
     
@@ -167,15 +168,6 @@ body > * {
 
 }
 
-.message {
-    display: none;
-    opacity: 0;
-    width: 80%;
-    margin: auto;
-
-
-}
-
 
 
 @keyframes typewriter {
@@ -190,14 +182,34 @@ body > * {
     width: 0;
     white-space: nowrap;
     overflow: hidden;
+
+    // Thanks to https://css-tricks.com/snippets/css/typewriter-effect/ !
+    &.auto {
+        margin: auto;
+
+        animation-name: typewriter;
+        animation-duration: 4s;
+        animation-timing-function: steps(40, jump-both);
+        animation-fill-mode: forwards;
+    }
 }
 
-// Thanks to https://css-tricks.com/snippets/css/typewriter-effect/ !
-.typewriter.auto {
+
+.message {
+    display: none;
+    opacity: 0;
+    width: 80%;
     margin: auto;
 
-    animation-name: typewriter;
-    animation-duration: 4s;
-    animation-timing-function: steps(40, jump-both);
-    animation-fill-mode: forwards;
+    * {
+        overflow: hidden;
+        //white-space: initial;
+
+        &:not(.info) {
+            opacity: 0;
+            white-space: initial;
+        }
+    }
+
+
 }
