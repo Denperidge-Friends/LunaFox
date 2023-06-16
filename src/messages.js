@@ -1,4 +1,5 @@
-let buttons = document.querySelectorAll("nav button");
+
+let buttons = document.querySelectorAll("#messages button");
 
 const originalTitle = document.title;
 
@@ -8,8 +9,12 @@ function delayedValue(elem, attribute, value, delay=100) {
     }, delay);
 }
 
-function toggleDisplay(id) {
+function showMessage(id) {
     let elem = document.getElementById(id);
+    elem.style.display = "block";
+
+    elem.classList.add("animate__zoomIn");
+    /*
     if (elem.style.display == "block") {
         elem.style.opacity = 0;
         delayedValue(elem, "display", "none", 2000);
@@ -18,11 +23,17 @@ function toggleDisplay(id) {
         elem.style.display = "block";
         delayedValue(elem, "opacity", 1);
         document.title = "LUNAFOX('s secret blog!)!!"
-    }
+    }*/
 }
 
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", (e) => {
-        toggleDisplay(e.target.value);
+        let button = e.target;
+        button.classList
+        button.className = ("animate__animated animate__fadeOutDown");
+        setTimeout(()=> {
+            button.remove();
+        }, 500);
+        showMessage(e.target.value);
     });
 }

@@ -1,5 +1,5 @@
-mixin post(date)
-    article.post(id=date)
+mixin message(date)
+    article.message.animate__animated(id=date)
         h4 -----BEGIN OSS ENCRYPTED TRANSMISSION-----
         h5 TRANSMISSION DATE: #{date}
         block
@@ -15,11 +15,6 @@ html(lang="en")
         link(rel="stylesheet", href="/src/lunafox.scss")
     body
         header 
-            nav 
-                each val in ["10-06-XXXXX", "13-04-XXXXX"]
-                    button(value=val) #{val}
-            hr
-
             section#music
                 button#prev &lt;
                 
@@ -28,22 +23,32 @@ html(lang="en")
                     input#volume(type="range" value=10)
                 button#next &gt;
 
+            hr
+
             h1#title Lunaf0x's Dataspherespace!
             p.
                 Welcome!
-            
+        
         main
-            +post("10-06-XXXXX")
-                include:markdown-it posts/10-06-XXXXX.md 
+            h2.animate__animated.animate__fadeInDown.animate__delay-1s Loading incoming messages...
+
+            section#messages             
+                each val, i in ["10-06-XXXXX", "13-04-XXXXX"]
+                    -let delay = "animate__animated animate__fadeInDown animate__delay-" + (i + 2) + "s"
+                    button(value=val, class=delay) #{val}
+
+        
+        +message("10-06-XXXXX")
+            include:markdown-it posts/10-06-XXXXX.md 
 
 
-            +post("13-04-XXXXX")
-                include:markdown-it posts/13-04-XXXXX.md 
+        +message("13-04-XXXXX")
+            include:markdown-it posts/13-04-XXXXX.md 
 
         
         script
             :songs
         
             
-        script(src="index.js")
+        script(src="messages.js")
         script(src="music.js" type="module") 
