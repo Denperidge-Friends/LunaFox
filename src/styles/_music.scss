@@ -12,18 +12,18 @@
     display: grid; 
     grid-template-columns: 10% 20% 20% 40% 10%; 
     #nowPlaying {
-        //display: block;
-        overflow: hidden;
-        display: flex;
+        display: grid;
+        grid-template-columns: 30% 70%; 
+        gap: 15px;
         align-items: center;
+
+        overflow: hidden;
 
         * {
             white-space: pre;
         }
 
-        > * {
-            flex-grow: 1;
-        }
+
         #songNameContainer {
             overflow: hidden;
             margin-left: 10px;
