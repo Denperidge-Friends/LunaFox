@@ -1,4 +1,24 @@
-extends /templates/post.pug
+Hi Foxies!!!
 
-block post
-    p meow
+So, for those that have received my previous message, you may be pleased to hear that I'm now a... 
+
+# STARFINDER!!
+
+And not only that, but I got introduced to a group of other Starfinders! They were a bit of a serious bunch though. I don't think they took me serious at first though. Or maybe still not? But far be it from me to be unprepared! Regulars in my stream may have seen SolisDog, my cute combat drone which also has a convenient riding saddle and a cargo rack for my soda. And it impressed them enough to take me as a freelancer! And even though I got called a "pet with a pet" due to my size and subsequent equal size drone, I'm still in, so that's good!
+
+*FOXNOTE: Just because Kraei' called me a pet, that doesn't mean you all can! 12 month subscriber tier, you know the rules.*
+
+But they were cool people though! I think just the hard mercenary type, for a part. But I got to meet Noe et Al on our team, who is also a Foxie!! The petters name is apparently Kraei'. E-L1j4h is this neat looking android. I didn't talk to Zed a lot, but hopefully I'll get to more in the future! And Panta could probably get along with every dad in this universe if he wanted to.
+
+Now, I try to be generally family friendly, even though some adult topics come up every now and then. So let it be known that if you are below the age of maturity of your species, I must ask you to *not* continue reading this paragraph. The next one is fine though! Okay, gone? Good. Because His Prophetic Poet has been watching *over* this group, let me tell you. The petter and the robot? BIG... "DTF" ENERGY, IF YOU KNOW WHAT I MEAN. IT IS BAD. WAUW.
+
+I got to go on ARES. Into this BIG library that is interconnected with the DataSphere! I forgot the name which I know I shouldn't because it's a direct reference to the Terran library which I would look up in the library but how could I ever go to the library of which I don't know the name to find the library of which I don't know the name! That's recursive logic.
+
+While the library was super impressive, it was also a bit weird. People knew Kraei' and E-L1j4h down there. And this super big Librarian asked me for my name and I told Librarian my name but that didn't do the trick and I had to mumble my "full" "name" and all I hope is that noone else heard it. Ugh.
+
+There were some fun highlights though! And on the way to getting a ship, a bunch of really cool people, these two sisters who were *also* Foxies and then their dad who was the warmest guy I think I've ever met (I wish he was my dad!!). We had a drink at his café (which is cool because with streaming all the time I *never* get to have a drink!). I think I even made one of the higher ups at Starfinder crack a smile! I got to help fix a spaceship and then even go into a warp gate and I nailed it the first time and then the second time I may have been a little teensy tiny bit nauseous but we're ignoring that
+
+I'm excited to see where things'll go next though! We're on this mission to collect these three artifacts. Wish I could tell you what they were, but I can't! Classifieeeeeeeeeeeeeeeeeeed information!
+
+Now, back to work! Have a good moon, and wish me luck <33
+- LunaaaaF0x, the freeest of the lancers of the starrest of the finders (they/them)
