@@ -49,12 +49,14 @@ function nextSong() {
     songIndex++;
     sound.unload();
     sound = playSong();
+    sound.play();
 }
 
 function prevSong() {
     songIndex--;
     sound.unload();
     sound = playSong();
+    sound.play();
 }
 
 
