@@ -4,12 +4,6 @@ let buttons = $("#messages button");
 
 const originalTitle = document.title;
 
-function delayedValue(elem, attribute, value, delay=100) {
-    setTimeout(() => {
-        elem.style[attribute] = value;
-    }, delay);
-}
-
 function showMessage(id) {
     $(".message").css("display", "none");
 
@@ -34,13 +28,18 @@ function messageContentAnimation(contents) {
 
     content = $(content);
 
-    console.log(content)
-
     let attribute, value, duration;
-    [ attribute, value ] = content.hasClass("info") ? [ "width", "100%", 3200 ] : [ "opacity", 1, 2000 ];
-    console.log(attribute, value, duration)
+    if (content.hasClass("info")) {
+        attribute = "width";
+        value = "100%";
+        duration = 3200;
+    }
+    else { 
+        attribute = "opacity";
+        value = 1;
+        duration = 2000;
+    }
 
-    duration = Array.from(content.text()).length * 100;
 
     content.animate({
         [attribute]: value
