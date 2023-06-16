@@ -1,0 +1,44 @@
+@keyframes scrolling {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+#music {
+    width: 100%;
+    display: grid; 
+    grid-template-columns: 10% 20% 20% 40% 10%; 
+    #nowPlaying {
+        //display: block;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+
+        * {
+            white-space: pre;
+        }
+
+        > * {
+            flex-grow: 1;
+        }
+        #songNameContainer {
+            overflow: hidden;
+            margin-left: 10px;
+        }
+        #songName {
+            display: inline-block;
+            transform: translateX(0%);
+            // Thanks to https://blog.hubspot.com/website/scrolling-text-css
+            animation-name: scrolling;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: steps(40, jump-both);
+
+        }
+    }
+    
+}

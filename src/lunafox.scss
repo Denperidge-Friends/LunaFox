@@ -1,102 +1,39 @@
-$background: #1D0042;
-$primary: #6C1E99;
-$secondary: #1D0042;
-$tertiary: #C589E8;
-$quaternary: #120B02;
-//#750979
-
-$color: white;
-
-@font-face {
-    font-family: "League Spartan";
-    src: url("../fonts/LeagueSpartan/LeagueSpartan-Regular.woff2")format("woff2");
-}
-
-@font-face {
-    font-family: "Anthony";
-    src: url("../fonts/Anthony/Anthony.woff2")format("woff2");
-}
+@import "styles/variable";
+@import "styles/fonts";
+@import "styles/elements";
+@import "styles/messages";
+@import "styles/music";
 
 
 html, body {
     margin: 0;
     padding: 0;
+}
+
+body {
+    background-color: $background;
+    background-image: url("../assets/background.gif");
+
     font-family: 'League Spartan', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: large;
+}
+
+
+header, main {
+    text-align: center;
 }
 
 header {
     font-size: larger;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Anthony', 'Courier New', Courier, monospace;
-}
-
-a {
-    &:link {
-        color: $color;
-    }
-
-    &:visited {
-        color: $color;
-    }
-
-    &:hover {
-        color: $tertiary;
-    }
-
-    &:active {
-        color: $color;
-    }
-
-}
-
-hr {
-    border-color: $background;
-}
-
-button, .range {
-    color: white;
-    padding: 12px;
-
-    border: none;
-    outline: 2px $primary groove;
-    outline-offset: -5px;
-
-    cursor: pointer;
-
-    background-color: $background;
-
-    input[type=range] {
-        width: 90%;
-    }
-}
-
-.range {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-body {
-    background-color: $background;
-    background-image: url("../assets/background.gif");
-}
-
-header, main {
-    
+body > * {
     width: 80%;
     margin: auto;
 
-    text-align: center;
-}
-
-body > * {
     box-sizing: border-box;
-
-    margin-bottom: 20px;
     padding: 50px calc(30px + 15px);
+    margin-bottom: 20px;
     
     color: $color;
     background-color: $primary;
@@ -107,69 +44,6 @@ body > * {
     outline-offset: -15px;
 }
 
-@keyframes scrolling {
-    from {
-        transform: translateX(0%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-#music {
-    width: 100%;
-    display: grid; 
-    grid-template-columns: 10% 20% 20% 40% 10%; 
-    #nowPlaying {
-        //display: block;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-
-        * {
-            white-space: pre;
-        }
-
-        > * {
-            flex-grow: 1;
-        }
-        #songNameContainer {
-            overflow: hidden;
-            margin-left: 10px;
-        }
-        #songName {
-            display: inline-block;
-            transform: translateX(0%);
-            // Thanks to https://blog.hubspot.com/website/scrolling-text-css
-            animation-name: scrolling;
-            animation-duration: 5s;
-            animation-iteration-count: infinite;
-            animation-direction: alternate;
-            animation-timing-function: steps(40, jump-both);
-
-        }
-    }
-    
-}
-
-#messages {
-    margin-top: 25px;
-    
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-
-    button {
-        width: 200px;
-        overflow: hidden;
-        white-space: pre;
-        text-align: center;
-    }
-
-}
-
-
-
 @keyframes typewriter {
     from {
         width: 0;
@@ -178,6 +52,7 @@ body > * {
         width: 100%;
     }
 }
+
 .typewriter {
     width: 0;
     white-space: nowrap;
@@ -192,24 +67,4 @@ body > * {
         animation-timing-function: steps(40, jump-both);
         animation-fill-mode: forwards;
     }
-}
-
-
-.message {
-    display: none;
-    opacity: 0;
-    width: 80%;
-    margin: auto;
-
-    * {
-        overflow: hidden;
-        //white-space: initial;
-
-        &:not(.info) {
-            opacity: 0;
-            white-space: initial;
-        }
-    }
-
-
 }

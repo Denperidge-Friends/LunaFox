@@ -1,0 +1,50 @@
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Anthony', 'Courier New', Courier, monospace;
+}
+
+a {
+    &:link {
+        color: $color;
+    }
+
+    &:visited {
+        color: $color;
+    }
+
+    &:hover {
+        color: $tertiary;
+    }
+
+    &:active {
+        color: $color;
+    }
+
+}
+
+hr {
+    border-color: $background;
+}
+
+button, .range {
+    padding: 12px;
+    color: white;
+
+    border: none;
+    outline: 2px $primary groove;
+    outline-offset: -5px;
+
+    cursor: pointer;
+
+    background-color: $background;
+}
+
+.range {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    input[type=range] {
+        width: 90%;
+    }
+}
