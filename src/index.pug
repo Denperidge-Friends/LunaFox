@@ -1,9 +1,12 @@
 mixin message(date)
     article.message(id=date)
+        .close X
         h4.info -----BEGIN OSS ENCRYPTED TRANSMISSION-----
         h5.info TRANSMISSION DATE: #{date}
         block
         h4.info -----END OSS ENCRYPTED TRANSMISSION-----
+        
+- let messages = ["05-Octo-793PT", "22-Sena-793PT"]
 
 
 doctype html
@@ -34,17 +37,13 @@ html(lang="en")
             h1#title Lunaf0x's Dataspherespace!
             p.
                 Welcome!
-        
-
-        - let messages = ["05-Octo-793PT", "22-Sena-793PT"]
 
         main
             h2.typewriter.auto Loading incoming messages...
 
-            section#messages
+            section#messageSelect
                 each val, i in messages
-                    -let delay = "animate__animated animate__fadeInDown animate__delay-" + (i + 2) + "s"
-                    button(value=val, class=delay) #{val}
+                    button(value=val)= val
 
         
         +message(messages[0])

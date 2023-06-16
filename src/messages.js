@@ -1,17 +1,14 @@
 import $ from "jquery";
 
 const originalTitle = document.title;
-let messageButtons = $("#messages button");
+let messageButtons = $("#messageSelect button");
 
 let openMessage;
 
 function showMessage(id) {
     document.title = document.title + " | " + id;
 
-    if (openMessage) {
-        openMessage.remove();
-    }
-
+    closeMessage();
     openMessage = $("#" + id);
 
     openMessage.css("display", "block").animate({
@@ -24,6 +21,18 @@ function showMessage(id) {
     let allMessageContent = openMessage.children("*");
     
     messageContentAnimation(allMessageContent.toArray());
+}
+
+function closeMessage() {
+    if (openMessage) {
+        let message = openMessage;  // Reassign! timeout
+        message.animate({
+            "opacity": 0
+        }, 1000);
+        setTimeout(()=> {
+            message.remove();
+        }, 1100);
+    }
 }
 
 function messageContentAnimation(messageContent) {
@@ -60,8 +69,8 @@ messageButtons.on("click", (e) => {
     setTimeout(()=> {
         button.remove();
         // Have to requery, otherwise length remains 2
-        if ($("#messages button").length <= 0) { 
-            $("#messages").remove();
+        if ($("#messageSelect button").length <= 0) { 
+            $("main").remove();
         }
     }, 1500);
 
@@ -69,3 +78,6 @@ messageButtons.on("click", (e) => {
         showMessage(e.target.value);
     }, 1000);
 });
+
+$(".message .close").on("click", closeMessage);
+

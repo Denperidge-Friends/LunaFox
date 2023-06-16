@@ -1,5 +1,4 @@
-
-#messages {
+#messageSelect {
     margin-top: 25px;
     
     display: flex;
@@ -21,13 +20,21 @@
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
+    position: relative;
 
     * {
         overflow: hidden;
+    }
+    > :not(.info) {
+        opacity: 0;
+        white-space: initial;
+    }
 
-        &:not(.info) {
-            opacity: 0;
-            white-space: initial;
-        }
+    .close {
+        color: $tertiary;
+        right: 40px;
+        top: 35px;
+        position: absolute;
+        cursor: pointer;
     }
 }
