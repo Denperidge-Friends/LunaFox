@@ -1,5 +1,4 @@
 import { Howl } from "howler";
-import 'animate.css';
 
 const play = document.getElementById("play");
 const volume = document.getElementById("volume");

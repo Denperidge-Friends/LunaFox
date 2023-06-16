@@ -1,5 +1,5 @@
 mixin message(date)
-    article.message.animate__animated(id=date)
+    article.message(id=date)
         h4 -----BEGIN OSS ENCRYPTED TRANSMISSION-----
         h5 TRANSMISSION DATE: #{date}
         block
@@ -30,9 +30,9 @@ html(lang="en")
                 Welcome!
         
         main
-            h2.animate__animated.animate__fadeInDown.animate__delay-1s Loading incoming messages...
+            h2.typewriter.auto Loading incoming messages...
 
-            section#messages             
+            section#messages
                 each val, i in ["10-06-XXXXX", "13-04-XXXXX"]
                     -let delay = "animate__animated animate__fadeInDown animate__delay-" + (i + 2) + "s"
                     button(value=val, class=delay) #{val}
@@ -50,5 +50,5 @@ html(lang="en")
             :songs
         
             
-        script(src="messages.js")
+        script(src="messages.js" type="module")
         script(src="music.js" type="module") 

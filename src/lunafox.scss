@@ -96,7 +96,7 @@ body > * {
     box-sizing: border-box;
 
     margin-bottom: 20px;
-    padding: 20px calc(20px + 15px);
+    padding: 50px calc(30px + 15px);
     
     color: $color;
     background-color: $primary;
@@ -114,21 +114,51 @@ body > * {
 }
 
 #messages {
+    margin-top: 25px;
+    
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    transition: all 2s;
+
     button {
-        transition: all 2s;
-        width: 0;
-        flex-grow: 1;
+        width: 200px;
+        overflow: hidden;
+        white-space: pre;
+        text-align: center;
     }
+
 }
 
 .message {
     display: none;
-    /*display: none;
     opacity: 0;
-    transition: opacity 2s;*/
+    width: 80%;
+    margin: auto;
+
+
 }
 
+
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+.typewriter {
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.typewriter.auto {
+    margin: auto;
+
+    animation-name: typewriter;
+    animation-duration: 4s;
+    animation-timing-function: steps(40, jump-both);
+    animation-fill-mode: forwards;
+}

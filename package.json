@@ -12,8 +12,8 @@
     "parcel-reporter-static-files-copy": "^1.5.0"
   },
   "dependencies": {
-    "animate.css": "^4.1.1",
-    "howler": "^2.2.3"
+    "howler": "^2.2.3",
+    "jquery": "^3.7.0"
   },
   "staticFiles": {
     "staticPath": "assets"

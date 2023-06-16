@@ -1,5 +1,6 @@
+import $ from "jquery";
 
-let buttons = document.querySelectorAll("#messages button");
+let buttons = $("#messages button");
 
 const originalTitle = document.title;
 
@@ -10,30 +11,54 @@ function delayedValue(elem, attribute, value, delay=100) {
 }
 
 function showMessage(id) {
-    let elem = document.getElementById(id);
-    elem.style.display = "block";
+    $(".message").css("display", "none");
 
-    elem.classList.add("animate__zoomIn");
-    /*
-    if (elem.style.display == "block") {
-        elem.style.opacity = 0;
-        delayedValue(elem, "display", "none", 2000);
-        document.title = originalTitle;
-    } else {
-        elem.style.display = "block";
-        delayedValue(elem, "opacity", 1);
-        document.title = "LUNAFOX('s secret blog!)!!"
-    }*/
+    //$(`#${id} *`).addClass("typewriter")
+
+    $("#" + id).css("display", "block").animate({
+        opacity: 1
+    }, 2000);
+
+
+
+
+    let contents = $("#" + id + " *");
+    contents.addClass("typewriter")
+    
+    iterateContentTypewriter(contents.toArray());
 }
 
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", (e) => {
-        let button = e.target;
-        button.classList
-        button.className = ("animate__animated animate__fadeOutDown");
+function iterateContentTypewriter(contents) {
+    let content = contents.shift();
+    if(!content) return;
+    let duration = 2000;
+
+    $(content).animate({
+        width: "100%"
+    }, duration, () => {
+        iterateContentTypewriter(contents)
+
+    });
+
+
+    setTimeout(() => {
+    }, duration);
+
+}
+
+buttons.each((i, button) => {
+    $(button).on("click", (e) => {
+        let button = $(e.target);
+        
+        button.animate({"width": 0}, 2000);
+
         setTimeout(()=> {
             button.remove();
-        }, 500);
-        showMessage(e.target.value);
+        }, 1500);
+
+        setTimeout(()=> {
+            showMessage(e.target.value);
+        }, 1000);
+
     });
-}
+});
