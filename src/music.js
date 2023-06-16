@@ -34,7 +34,6 @@ function playSong() {
 
     return new Howl({
         src: file,
-        autoplay: true,
         volume: volume.val() / 100,
         onplay: () => {
             play.text("pause");

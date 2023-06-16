@@ -22,6 +22,14 @@
     margin-bottom: 20px;
     position: relative;
 
+    img {
+        max-height: 200px;
+        float: right;
+        $border: 2px $tertiary groove;
+        border-bottom: $border;
+        border-top: $border;
+    }
+
     * {
         overflow: hidden;
     }
