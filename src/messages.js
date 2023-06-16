@@ -31,13 +31,12 @@ function showMessage(id) {
 function iterateContentTypewriter(contents) {
     let content = contents.shift();
     if(!content) return;
-    let duration = 2000;
+    let duration = 4000;
 
     $(content).animate({
         width: "100%"
     }, duration, () => {
         iterateContentTypewriter(contents)
-
     });
 
 
