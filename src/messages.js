@@ -1,28 +1,33 @@
 import $ from "jquery";
 
-let buttons = $("#messages button");
-
 const originalTitle = document.title;
+let messageButtons = $("#messages button");
+
+let openMessage;
 
 function showMessage(id) {
     document.title = document.title + " | " + id;
 
-    $(".message").css("display", "none");
+    if (openMessage) {
+        openMessage.remove();
+    }
 
-    $("#" + id).css("display", "block").animate({
+    openMessage = $("#" + id);
+
+    openMessage.css("display", "block").animate({
         opacity: 1
     }, 2000);
 
-    const info = $("#" + id + " .info")
+    const info = openMessage.children(".info")
     info.addClass("typewriter");
 
-    let contents = $("#" + id + " *");
+    let allMessageContent = openMessage.children("*");
     
-    messageContentAnimation(contents.toArray());
+    messageContentAnimation(allMessageContent.toArray());
 }
 
-function messageContentAnimation(contents) {
-    let content = contents.shift();
+function messageContentAnimation(messageContent) {
+    let content = messageContent.shift();
     if(!content) return;
 
     content = $(content);
@@ -39,15 +44,14 @@ function messageContentAnimation(contents) {
         duration = 2000;
     }
 
-
     content.animate({
         [attribute]: value
     }, duration, () => {
-        messageContentAnimation(contents)
+        messageContentAnimation(messageContent)
     });
 }
 
-buttons.on("click", (e) => {
+messageButtons.on("click", (e) => {
     document.title = originalTitle + "'s SECRET BLOG!";
     let button = $(e.target);
     
@@ -55,6 +59,10 @@ buttons.on("click", (e) => {
 
     setTimeout(()=> {
         button.remove();
+        // Have to requery, otherwise length remains 2
+        if ($("#messages button").length <= 0) { 
+            $("#messages").remove();
+        }
     }, 1500);
 
     setTimeout(()=> {

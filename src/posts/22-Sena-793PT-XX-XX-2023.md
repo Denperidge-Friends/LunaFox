@@ -12,4 +12,4 @@ If you see me across the stars, please do come say hi!
 Unless I'm being chased by some people. Then don't. Stay safe until I'm done and then come say hi!!
 
 Have a good moon!
-- LunaF0x, the unaware but trying (they/them)
+- Lunaf0x, the unaware but trying (they/them)
