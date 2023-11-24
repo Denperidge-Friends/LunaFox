@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "npx parcel serve --public-url LunaFox/ src/index.pug",
-    "build": "npx parcel build --public-url LunaFox/ src/index.pug"
+    "start": "npx parcel serve --public-url /LunaFox/ src/index.pug",
+    "build": "npx parcel build --public-url /LunaFox/ src/index.pug"
   },
   "devDependencies": {
     "@parcel/transformer-pug": "^2.8.3",
